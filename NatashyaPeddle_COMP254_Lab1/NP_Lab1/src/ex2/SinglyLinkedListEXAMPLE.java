@@ -29,7 +29,7 @@ package linkedlists;
  * @author Roberto Tamassia
  * @author Michael H. Goldwasser
  */
-public class SinglyLinkedList<E> implements Cloneable {
+public class SinglyLinkedListEXAMPLE<E> implements Cloneable {
   //---------------- nested Node class ----------------
   /**
    * Node of a singly linked list, which stores a reference to its
@@ -88,7 +88,7 @@ public class SinglyLinkedList<E> implements Cloneable {
   private int size = 0;                      // number of nodes in the list
 
   /** Constructs an initially empty list. */
-  public SinglyLinkedList() { }              // constructs an initially empty list
+  public SinglyLinkedListEXAMPLE() { }              // constructs an initially empty list
 
   // access methods
   /**
@@ -165,7 +165,7 @@ public class SinglyLinkedList<E> implements Cloneable {
   public boolean equals(Object o) {
     if (o == null) return false;
     if (getClass() != o.getClass()) return false;
-    SinglyLinkedList other = (SinglyLinkedList) o;   // use nonparameterized type
+    linkedlists.SinglyLinkedListEXAMPLE other = (linkedlists.SinglyLinkedListEXAMPLE) o;   // use nonparameterized type
     if (size != other.size) return false;
     Node walkA = head;                               // traverse the primary list
     Node walkB = other.head;                         // traverse the secondary list
@@ -178,9 +178,9 @@ public class SinglyLinkedList<E> implements Cloneable {
   }
 
   @SuppressWarnings({"unchecked"})
-  public SinglyLinkedList<E> clone() throws CloneNotSupportedException {
+  public linkedlists.SinglyLinkedListEXAMPLE<E> clone() throws CloneNotSupportedException {
     // always use inherited Object.clone() to create the initial copy
-    SinglyLinkedList<E> other = (SinglyLinkedList<E>) super.clone(); // safe cast
+    linkedlists.SinglyLinkedListEXAMPLE<E> other = (linkedlists.SinglyLinkedListEXAMPLE<E>) super.clone(); // safe cast
     if (size > 0) {                    // we need independent chain of nodes
       other.head = new Node<>(head.getElement(), null);
       Node<E> walk = head.getNext();      // walk through remainder of original list
@@ -224,7 +224,7 @@ public class SinglyLinkedList<E> implements Cloneable {
   public static void main(String[] args)
   {
 	  
-	  SinglyLinkedList<String> list = new SinglyLinkedList<String>();
+	  linkedlists.SinglyLinkedListEXAMPLE<String> list = new linkedlists.SinglyLinkedListEXAMPLE<String>();
 	  list.addFirst("MSP");
 	  list.addLast("ATL");
 	  list.addLast("BOS");

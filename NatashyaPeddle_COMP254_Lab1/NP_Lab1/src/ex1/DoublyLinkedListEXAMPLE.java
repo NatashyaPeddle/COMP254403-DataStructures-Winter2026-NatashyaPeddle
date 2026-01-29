@@ -187,12 +187,12 @@ public class DoublyLinkedListEXAMPLE<E> {
    * @param successor     node just after the location where the new element is inserted
    */
   private void addBetween(E e, Node<E> predecessor, Node<E> successor) {
-    // create and link a new node
-    Node<E> newest = new Node<>(e, predecessor, successor);
-    predecessor.setNext(newest);
-    successor.setPrev(newest);
-    size++;
-  }
+        // create and link a new node
+        Node<E> newest = new Node<>(e, predecessor, successor);
+        predecessor.setNext(newest);
+        successor.setPrev(newest);
+        size++;
+    }
 
   /**
    * Removes the given node from the list and returns its element.
