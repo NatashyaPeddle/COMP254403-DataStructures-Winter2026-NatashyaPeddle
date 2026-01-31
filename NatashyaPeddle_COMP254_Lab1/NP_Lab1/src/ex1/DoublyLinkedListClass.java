@@ -45,19 +45,14 @@ public class DoublyLinkedListClass <E> {
 
     /// creates a new list empty list - base for all lists^^^----------
 
-    /// ---------required operations---------
+    /// ---------access methods---------
     public int size() { return size; } ///returns number of elements in list
-    public boolean isEmpty() { return size == 0; } ///checks and returns whether its empty
+    public boolean isEmpty() { return size == 0; } ///checks and returns whether its empt
 
-
-    /// ----add methods---------------------------------------------------
-    ///
     /// used to add elements in main
     public void addFirst(E e) { addBetween(e, header, header.getNext());}///Added between header <--> next node after header
 
     public void addLast(E e) { addBetween(e, trailer.getPrev(), trailer);} ///Added between trailer <--> previous node before trailer
-
-
 
     private void addBetween(E e, Node<E> predecessor, Node<E> successor) {
         /// creates/links nodes
