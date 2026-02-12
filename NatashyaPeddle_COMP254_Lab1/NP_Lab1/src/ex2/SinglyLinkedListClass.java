@@ -28,8 +28,8 @@ public class SinglyLinkedListClass<E> implements Cloneable {
     } ///end of nested ------------this defines the shape/layout of the node
 
     /// instance variables
-    private Node<E> head = null; ///starting node - is empty
-    private Node<E> tail = null; ///end node - is empty
+    private Node<E> head = null; ///starting node - is empty ----points to start node reference - needed to traverse list
+    private Node<E> tail = null; ///end node - is empty points to end node reference needed to traverse list & add nodes
     private int size = 0; ///num of elements
 
     /// Constructs singly linked empty list---------- initializes above ^^^^
@@ -101,7 +101,7 @@ public class SinglyLinkedListClass<E> implements Cloneable {
 
         /// node connect / link nodes----------------------
 
-        /// *********ONLY RUNS IF SWAPPED***********
+        /// *********ONLY RUNS IF SWAPPED*********** RELINKS EVERYTHING AFTER SWAP
         /// prev1 = A, node1 = B, Node1.next = C, Node2=D, node2 next = null/E/Tail
         if (prev1 != null) /// If previous before node1 is not null
             prev1.setNext(node2); ///replaces node1 link with node2

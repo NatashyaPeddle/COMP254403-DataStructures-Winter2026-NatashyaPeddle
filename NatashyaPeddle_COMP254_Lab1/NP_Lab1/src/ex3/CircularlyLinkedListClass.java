@@ -78,19 +78,19 @@ public class CircularlyLinkedListClass <E> implements Cloneable { /// must inclu
     }
 
     ///clone method
-    public CircularlyLinkedListClass<E> clone() throws CloneNotSupportedException { /// creates copy / clone
-        CircularlyLinkedListClass<E> other =  (CircularlyLinkedListClass<E>) super.clone(); ///creates new list named other
-        if(size > 0) { /// only work if its not empty
+    public CircularlyLinkedListClass<E> clone() throws CloneNotSupportedException { /// returns the already created list
+        CircularlyLinkedListClass<E> other =  (CircularlyLinkedListClass<E>) super.clone(); /// creates shallow copy / clone - creates new list named other
+        if(size > 0) { /// only clones the first list if its not empty
 
             Node<E> walk = tail.getNext(); ///starts at head (which is after tail)
 
             Node<E> newest = new Node<>(walk.getElement(), null); ///creates node in list and copies element
             newest.setNext(newest); ///makes it circular or loop back
-            other.tail = newest; /// has one node
-            walk = walk.getNext(); ///moves to next node
+            other.tail = newest; /// adds a tail node
+            walk = walk.getNext(); ///moves to next node in first list
 
             while(walk != tail.getNext()){ /// loop = continue until back to head
-                Node<E> nextNode = new Node<>(walk.getElement(), other.tail.getNext()); /// copies the next element
+                Node<E> nextNode = new Node<>(walk.getElement(), other.tail.getNext()); /// copies the next element and with the above loop, keeps copying until end
                 other.tail.setNext(nextNode); ///links new copied node after the cloned tail node
                 other.tail = nextNode; ///movs tail  to last new node
                 walk = walk.getNext(); /// moves forward in orgiginal list

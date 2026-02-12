@@ -50,11 +50,11 @@ public class DoublyLinkedListClass <E> {
     public boolean isEmpty() { return size == 0; } ///checks and returns whether its empt
 
     /// used to add elements in main
-    public void addFirst(E e) { addBetween(e, header, header.getNext());}///Added between header <--> next node after header
+    public void addFirst(E e) { addBetween(e, header, header.getNext());}///Calls in between method - Adds reference between header <--> next node after header
 
-    public void addLast(E e) { addBetween(e, trailer.getPrev(), trailer);} ///Added between trailer <--> previous node before trailer
+    public void addLast(E e) { addBetween(e, trailer.getPrev(), trailer);} ///Calls in between method - Adds reference between trailer <--> previous node before trailer
 
-    private void addBetween(E e, Node<E> predecessor, Node<E> successor) {
+    private void addBetween(E e, Node<E> predecessor, Node<E> successor) { /// this actually inserts the nodes there
         /// creates/links nodes
         Node<E> newest = new Node<>(e, predecessor, successor); ///creates new node "newest" predecsesor = header / successor = trailer
         predecessor.setNext(newest); ///sets newest after header
@@ -65,11 +65,11 @@ public class DoublyLinkedListClass <E> {
     /// reverse of the add methods, it removes the element next to trailer/header
     public E removeFirst() {
         if (isEmpty()) return null; /// has nothing to remove if empty
-        return remove(header.getNext()); /// removes element directly after header
+        return remove(header.getNext()); /// calls remove method -  removes element directly after header
     }
     public E removeLast() {
         if (isEmpty()) return null; /// has nothing to remove if empty
-        return remove(trailer.getPrev()); /// removes element directly before trailer
+        return remove(trailer.getPrev()); /// calls remove method - removes element directly before trailer
     }
 
     private E remove(DoublyLinkedListClass.Node<E> node) {
@@ -82,7 +82,7 @@ public class DoublyLinkedListClass <E> {
     }
 
     /// ----returns element-------------------
-    ///  just used to check elements without touching list
+    ///  Stores information in current condition - just used to check elements without touching list
     public E getFirst() {
         if (isEmpty()) return null; /// if size = 0 doesnt return
         return header.element;
@@ -95,7 +95,7 @@ public class DoublyLinkedListClass <E> {
     /// ------concatenate-------------------------------------------------
    public void concatenate(DoublyLinkedListClass<E> other) { /// takes other list and adds to end of current list
 
-       Node<E>thisLast = this.trailer.getPrev(); /// "Sentinel node" = this.trailer node at end of current list > returns last element
+       Node<E>thisLast = this.trailer.getPrev(); /// RETURNS ELEMENT REFERENCE OF LAST NODE FIRST LIST - -- "Sentinel node" = this.trailer node at end of current list > returns last element
        Node<E>otherLast = other.trailer.getPrev(); /// gets last element of other list > store in otherlast
        Node<E>otherFirst = other.header.getNext(); ///first element in other list > will connect to end of current list
 
