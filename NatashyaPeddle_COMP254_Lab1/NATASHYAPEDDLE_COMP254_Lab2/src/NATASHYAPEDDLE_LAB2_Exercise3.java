@@ -4,6 +4,9 @@ class NATASHYAPEDDLE_LAB2_Exercise3 {
 
     /** Returns true if there are no duplicate elements in the array. */
 
+
+    /// CHECK WHICH METHOD HAS THE LARGEST VALUE IN 1 MIN
+
     /// UNIQUE 1 --------------------------------------------------------------------------------------------------
     /// ***GENERAL STRUCTURE / LAYOUT OF UNIQUE METHODS - CHECKS TO MAKE SURE N ARRAY HAS NO DUPLICATES***
     public static boolean unique1(int[] data) { /// takes in array
@@ -138,7 +141,7 @@ class NATASHYAPEDDLE_LAB2_Exercise3 {
 
         for (int t = 0; t < trials; t++) { /// runs 10 times
 
-            int[] data = new int[n]; /// filled with zeroes - creates array,
+            int[] data = new int[n]; /// filled with zeroes - creates array, - used to measure performance of algothrims with n times
 
             for( int i = 0; i < n; i++ ) data[i] = i;
 
@@ -161,7 +164,7 @@ class NATASHYAPEDDLE_LAB2_Exercise3 {
 
         for (int t = 0; t < trials; t++) { /// 10 attempts
 
-            int[] data = new int[n]; ///filled with zeroes - creates array
+            int[] data = new int[n]; ///filled with zeroes - creates array - used to measure performance of algothrims with n times
 
             for( int i = 0; i < n; i++ ) data[i] = i;
 

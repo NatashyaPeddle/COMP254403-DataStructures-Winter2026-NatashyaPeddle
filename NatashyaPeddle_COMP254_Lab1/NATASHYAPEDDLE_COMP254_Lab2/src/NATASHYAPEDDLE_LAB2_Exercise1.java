@@ -11,6 +11,7 @@ class NATASHYAPEDDLE_LAB2_Exercise1 {
 
     /// Characterization: O(n) = Linear Time
     /// Explanation: one loop, runs once from 0 to n-1 = Linear time
+    /// Each iteration does constant work and time grows in line with n
 
 
 
@@ -25,6 +26,7 @@ class NATASHYAPEDDLE_LAB2_Exercise1 {
     }
     /// Characterization: O(n) = Linear Time
     /// Explanation: one loop, (incremented by 2 but still only 1 loop) = Linear time
+    /// Each iteration does constant work and time grows in line with n
     /// Does the incrementation do anything to running time?? Anything to do with Logarithmic time?
 
 
@@ -53,7 +55,7 @@ class NATASHYAPEDDLE_LAB2_Exercise1 {
     }
     /// Characterization: O(n) = Linear Time
     /// Explanation: one loop, runs once from 0 to n-1 = Linear time
-
+    /// Each iteration does constant work and time grows in line with n
 
     /// EXAMPLE 5 -------------------------------------------------------------------------------------
     /** Returns the number of times second array stores sum of prefix sums from first. */
@@ -71,4 +73,5 @@ class NATASHYAPEDDLE_LAB2_Exercise1 {
 
 }
 /// Characterization: O(n^3) = Cubic Time
-/// Explanation: Nested Loops over 2, 3 loops total, Outer loop n times x middle loop n times x inner loop n times - n x n x n = Cubic time
+/// Explanation: Nested Loops = 2, 3 loops total, Outer loop n times x middle loop n times x inner loop n times - n x n x n = Cubic time
+/// OR O(n^2) x n = O(n^3)

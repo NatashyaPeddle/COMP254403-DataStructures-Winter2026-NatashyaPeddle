@@ -4,6 +4,8 @@ public class NATASHYAPEDDLE_LAB2_Exercise2 {
     /** Returns an array a such that, for all j, a[j] equals the average of x[0], ..., x[j]. */
 
 
+    /// COMPARES BOTH TO SEE WHICH IS FASTER WTIH GROWTH OF INPUT SIZE
+
     /// *****DETERMINES LAYOUT OF METHOD: PrefixAverage1 *****************************************
     public static double[] prefixAverage1(double[] x) { /// creates method that takes double array
         int n = x.length; /// stores length of input array
@@ -36,6 +38,7 @@ public class NATASHYAPEDDLE_LAB2_Exercise2 {
     }
     /// Characterization: O(n) = Linear Time
     /// Explanation: one loop, runs once from 0 to n-1 = Linear time
+    /// This is faster
 
 
 
@@ -61,7 +64,7 @@ public static void main(String[] args) {
     System.out.println("Testing prefixaverage2 O(n)...");
 
     for (int t=0; t < trials; t++) {
-        double[] data = new double[n]; /// filled with zeroes
+        double[] data = new double[n]; /// filled with zeroes - used to measure performance of algothrims with n times
         prefixAverage2(data); ///method call with zero filled array = Warm up call
 
         long startTime = System.currentTimeMillis(); ///start timer
@@ -80,7 +83,7 @@ public static void main(String[] args) {
 
     n = start;                               // restore n to its start value
     for (int t=0; t < trials; t++) {
-        double[] data = new double[n]; ///filled with zeroes
+        double[] data = new double[n]; ///filled with zeroes - used to measure performance of algothrims with n times
 
         prefixAverage1(data);///method call with zero filled array = Warm up call
 
